@@ -15,7 +15,7 @@ Each program or function should have the following information:
 
 ### Output
 
-- What (if any) output does the program or function return
+- What (if any) output does the program or function return.
 
 ### Steps
 - What are the steps (written in English) necessary to solve
@@ -27,6 +27,13 @@ Each program or function should have the following information:
 ## Documentation
 
 - App goal: deliver weather information about current city + 5 additional cities if the user desire so.
+- App input: weatherapi.com.
+- App output: display the weather information to the user.
+- App steps: get user current city else set default city to Paris, fetch data from weatherapi.com,
+  organize the fetched data in objects, display the objects information where it is needed,
+  allow user to search for other cities and add them to his cities list,
+  user can delete cities except for his default. 
+
 
 ## Starting with the main page on mobile:
 - First container: Display the current city, current temperature, time, weather condition, max & min temperatures
