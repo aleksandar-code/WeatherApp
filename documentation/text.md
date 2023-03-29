@@ -1,6 +1,6 @@
-# I want to make this weather app as complete and as accessible as possible.
+# I want to make this weather app as complete and as accessible as possible.
 
-## Documentation standards
+## Documentation standards
 
 Each program or function should have the following information:
 
@@ -17,7 +17,7 @@ Each program or function should have the following information:
 
 - What (if any) output does the program or function return
 
-### Steps
+### Steps
 - What are the steps (written in English) necessary to solve
   this problem. This should NOT be programming code, but each line
   should be specific enough to be translated to a line or two of code
