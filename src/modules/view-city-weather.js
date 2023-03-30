@@ -19,9 +19,8 @@ function createHourForecast(city) {
   const data = city.hourForecastData();
   const element = document.createElement("div");
   element.classList.add("card");
-
   for (let i = 0; i < data.length; i += 1) {
-    element.innerHTML += `<div><p>${data[i].temperature}°</p> <img src="${data[i].conditionIcon}" alt="${data[i].conditionText}"></div>`;
+    element.innerHTML += `<div><p>${data[i].hour}: ${data[i].temperature}°</p> <img src="${data[i].conditionIcon}" alt="${data[i].conditionText}"></div>`;
   }
   return element;
 }

@@ -76,11 +76,12 @@ function structureForecast(response) {
     const temperature = Math.round(
       response.forecast.forecastday[0].hour[idx].temp_c
     );
+    const hour = response.forecast.forecastday[0].hour[idx].time.split(" ")[1];
     const conditionIcon =
       response.forecast.forecastday[0].hour[idx].condition.icon;
     const conditionText =
       response.forecast.forecastday[0].hour[idx].condition.text;
-    return { temperature, conditionIcon, conditionText };
+    return { temperature, hour, conditionIcon, conditionText };
   };
   const days = (function createDaysObject() {
     const daysArray = [createDay(0), createDay(1), createDay(2)];
