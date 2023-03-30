@@ -20,7 +20,13 @@ class CityWeather {
   }
 
   detailsData() {
-    return this.currentWeather.weatherDetails;
+    const array = [];
+    const keys = Object.keys(this.currentWeather.weatherDetails);
+    for (let i = 0; i < keys.length; i += 1) {
+      const key = keys[i];
+      array.push(this.currentWeather.weatherDetails[key]);
+    }
+    return array;
   }
 }
 
