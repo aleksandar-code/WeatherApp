@@ -11,15 +11,7 @@ class CityWeather {
   }
 
   hourForecastData() {
-    const array = [];
-    const keys = Object.keys(this.forecastWeather.hours);
-    for (let i = 0; i < keys.length; i += 1) {
-      const key = keys[i];
-
-      array.push(this.forecastWeather.hours[key]);
-    }
-
-    return array;
+    return this.forecastWeather.hours;
   }
 
   dayForecastData() {

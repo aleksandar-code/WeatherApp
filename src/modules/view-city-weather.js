@@ -21,7 +21,7 @@ function createHourForecast(city) {
   element.classList.add("card");
 
   for (let i = 0; i < data.length; i += 1) {
-    element.textContent += `${data[i].temperature} ${data[i].conditionIcon}\n`;
+    element.innerHTML += `<div><p>${data[i].temperature}°</p> <img src="${data[i].conditionIcon}" alt="${data[i].conditionText}"></div>`;
   }
   return element;
 }

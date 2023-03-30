@@ -65,17 +65,22 @@ function structureCurrent(response) {
 function structureForecast(response) {
   const createDay = (idx) => {
     const array = response.forecast.forecastday;
-    const maxTemperature = array[idx].day.maxtemp_c;
-    const minTemperature = array[idx].day.mintemp_c;
+    const maxTemperature = Math.round(array[idx].day.maxtemp_c);
+    const minTemperature = Math.round(array[idx].day.mintemp_c);
     const conditionIcon = array[idx].day.condition.icon;
+    const conditionText = array[idx].day.condition.text;
 
-    return { maxTemperature, minTemperature, conditionIcon };
+    return { maxTemperature, minTemperature, conditionIcon, conditionText };
   };
   const createHour = (idx) => {
-    const temperature = response.forecast.forecastday[0].hour[idx].temp_c;
+    const temperature = Math.round(
+      response.forecast.forecastday[0].hour[idx].temp_c
+    );
     const conditionIcon =
       response.forecast.forecastday[0].hour[idx].condition.icon;
-    return { temperature, conditionIcon };
+    const conditionText =
+      response.forecast.forecastday[0].hour[idx].condition.text;
+    return { temperature, conditionIcon, conditionText };
   };
   const days = (function createDaysObject() {
     const daysArray = [createDay(0), createDay(1), createDay(2)];
