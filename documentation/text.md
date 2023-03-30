@@ -32,13 +32,27 @@ Each program or function should have the following information:
   and display it's weather, fetch data from weatherapi.com,
   organize the fetched data in objects, display the objects information where it is needed,
   allow user to search for other cities and add them to his cities list,
-  user can delete cities except for his default. 
+  user can delete cities except for his default.
+
+  - All data i need to fetch and how to organize it:
+      - Current weather:
+          - Input: Current city, current temperature in °C and °F, last updated time, condition, max & min for current day,
+          weather details: UV Index, wind speed + other details.
+          - Output: structure the data.
+      - Forecast weather:
+          - Input: 24 hours + 3 days forecast weather; Current hour/day temperature + condition icon / max - min + condition icon.
+          - Output: structure the data.
 
 ## Starting with the main page on mobile:
 - First container: Display the current city, current temperature, time, weather condition, max & min temperatures.
+    - Input: Data from current weather: current temp, condition, from forecast max & min, from location city name.
 - Second container: Display forecast information about the city, 24hours and 3 days, scrollable.
-- Third container: UV Index & Wind gust + Details button which gives access to the details (Everything accessible on desktop).
+    - Input: Data from forecast hour and day.
+- Third container: UV Index & Wind speed + Details button which gives access to the details (Everything accessible on desktop).
+    - Input: Data from forecast uv and wind speed + other details.
 - Fourth container: Navigation dots, navigate between cities + button (+) that leads to city search.
+    - Input: User click.
+    - Output: Should display up to date weather information about the city or lead to city search tab.
 
 ## Details page on mobile:
 - Header: Return button, display the current city, current temperature, time, weather condition.
@@ -50,3 +64,9 @@ Each program or function should have the following information:
 
 ### Color palette:
 - #A799B7, #9888A5, #776472, #445552, #294D4A
+
+
+
+// Add documentation about how each object is gonna be and how to organize the data.
+
+// https://w3c.github.io/geolocation-api/#getcurrentposition-method read the documentation before doing anything with IP adressses.
