@@ -24,9 +24,20 @@ class CityWeather {
     const keys = Object.keys(this.forecastWeather.hours);
     for (let i = 0; i < keys.length; i += 1) {
       const key = keys[i];
-      if (!(this.forecastWeather[key] instanceof Object)) {
-        array.push(this.forecastWeather.hours[key]);
-      }
+
+      array.push(this.forecastWeather.hours[key]);
+    }
+
+    return array;
+  }
+
+  dayForecastData() {
+    const array = [];
+    const keys = Object.keys(this.forecastWeather.days);
+    for (let i = 0; i < keys.length; i += 1) {
+      const key = keys[i];
+
+      array.push(this.forecastWeather.days[key]);
     }
 
     return array;

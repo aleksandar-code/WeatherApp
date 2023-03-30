@@ -23,6 +23,17 @@ function createHourForecast(city) {
   return element;
 }
 
+function createDayForecast(city) {
+  const data = city.dayForecastData();
+  const element = document.createElement("div");
+  element.classList.add("card");
+
+  for (let i = 0; i < data.length; i += 1) {
+    element.textContent += `${data[i].maxTemperature} ${data[i].minTemperature} ${data[i].conditionIcon}\n`;
+  }
+  return element;
+}
+
 function createDetails(city) {
   const data = city.detailsData();
   const element = document.createElement("div");
@@ -44,7 +55,8 @@ function showPage() {
   const weatherBasics = createWeatherBasics(city);
   const detailsBasic = createDetails(city);
   const hourForecast = createHourForecast(city);
-  main.append(weatherBasics, hourForecast, detailsBasic);
+  const dayForecast = createDayForecast(city);
+  main.append(weatherBasics, hourForecast, dayForecast, detailsBasic);
 }
 
 export default showPage;
