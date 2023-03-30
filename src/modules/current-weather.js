@@ -4,7 +4,7 @@
 class CurrentWeather {
   constructor(
     city,
-    currentTemperature,
+    temperature,
     lastUpdate,
     conditionText,
     conditionIcon,
@@ -13,7 +13,7 @@ class CurrentWeather {
     weatherDetails
   ) {
     this.city = city;
-    this.currentTemperature = currentTemperature;
+    this.temperature = temperature;
     this.lastUpdate = lastUpdate;
     this.conditionText = conditionText;
     this.conditionIcon = conditionIcon;
