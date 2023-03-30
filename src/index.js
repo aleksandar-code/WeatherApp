@@ -1,6 +1,8 @@
 import "./style.css";
 import cities from "./modules/cities-weather";
+import showPage from "./modules/view-city-weather";
 
-cities.createCity();
-
-console.log(cities);
+window.onload = async () => {
+  await cities.createCity();
+  showPage();
+};
