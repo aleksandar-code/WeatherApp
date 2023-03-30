@@ -6,7 +6,7 @@ async function getUserCity() {
       { mode: "cors" }
     );
     const userData = await response.json();
-    result = userData.city;
+    result = userData.ip;
   } catch (error) {
     result = "London";
   }
@@ -31,9 +31,9 @@ async function getCityWeather(city) {
 async function getWeatherWithIp() {
   let result;
   try {
-    const city = await getUserCity();
+    const ip = await getUserCity();
     const response = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=feed359d6d0647688d9132213232803&q=${city}&days=3&aqi=yes&alerts=no`,
+      `https://api.weatherapi.com/v1/forecast.json?key=feed359d6d0647688d9132213232803&q=${ip}&days=3&aqi=yes&alerts=no`,
       { mode: "cors" }
     );
     const cityData = await response.json();
