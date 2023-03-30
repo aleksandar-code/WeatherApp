@@ -38,10 +38,11 @@ Each program or function should have the following information:
       - Current weather:
           - Input: Current city, current temperature in °C and °F, last updated time, condition, max & min for current day,
           weather details: UV Index, wind speed + other details.
-          - Output: structure the data.
+          - Output: Structure the data.
+          - Steps: take getWeatherWithIp data, and fetch location, current, forecast.
       - Forecast weather:
           - Input: 24 hours + 3 days forecast weather; Current hour/day temperature + condition icon / max - min + condition icon.
-          - Output: structure the data.
+          - Output: Structure the data.
 
 ## Starting with the main page on mobile:
 - First container: Display the current city, current temperature, time, weather condition, max & min temperatures.
