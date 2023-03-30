@@ -20,7 +20,7 @@ function createHourForecast(city) {
   const element = document.createElement("div");
   element.classList.add("card");
   for (let i = 0; i < data.length; i += 1) {
-    element.innerHTML += `<div><p>${data[i].hour}: ${data[i].temperature}°</p> <img src="${data[i].conditionIcon}" alt="${data[i].conditionText}"></div>`;
+    element.innerHTML += `<div><p>${data[i].hour}: ${data[i].temperature}°</p><img src="${data[i].conditionIcon}" alt="${data[i].conditionText}"></div>`;
   }
   return element;
 }
@@ -31,7 +31,12 @@ function createDayForecast(city) {
   element.classList.add("card");
 
   for (let i = 0; i < data.length; i += 1) {
-    element.textContent += `${data[i].maxTemperature} ${data[i].minTemperature} ${data[i].conditionIcon}\n`;
+    let option = "";
+    if (i === 0) {
+      option = "Today: ";
+    }
+
+    element.innerHTML += `<div><p>${option}${data[i].minTemperature}° - ${data[i].maxTemperature}°</p><img src="${data[i].conditionIcon}"></div>`;
   }
   return element;
 }
