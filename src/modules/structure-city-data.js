@@ -12,11 +12,15 @@ function structureCurrent(response) {
 
   const city = response.location.name;
   const temperature = response.current.temp_c;
-  const lastUpdate = response.current.last_updated;
+  const lastUpdate = response.current.last_updated.split(" ")[1];
   const conditionText = response.current.condition.text;
   const conditionIcon = response.current.condition.icon;
-  const maxTemperature = response.forecast.forecastday[0].day.maxtemp_c;
-  const minTemperature = response.forecast.forecastday[0].day.mintemp_c;
+  const maxTemperature = Math.round(
+    response.forecast.forecastday[0].day.maxtemp_c
+  );
+  const minTemperature = Math.round(
+    response.forecast.forecastday[0].day.mintemp_c
+  );
   const weatherDetails = (function getWeatherDetails() {
     const toFetch = response.forecast.forecastday[0];
     const aqi = toFetch.day.air_quality["us-epa-index"];

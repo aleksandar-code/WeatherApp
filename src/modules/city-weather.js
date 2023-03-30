@@ -7,16 +7,7 @@ class CityWeather {
   }
 
   weatherBasicsData() {
-    const array = [];
-    const keys = Object.keys(this.currentWeather);
-    for (let i = 0; i < keys.length; i += 1) {
-      const key = keys[i];
-      if (!(this.currentWeather[key] instanceof Object)) {
-        array.push(this.currentWeather[key]);
-      }
-    }
-
-    return array;
+    return this.currentWeather;
   }
 
   hourForecastData() {

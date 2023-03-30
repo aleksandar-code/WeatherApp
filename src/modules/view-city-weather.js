@@ -4,11 +4,14 @@ function createWeatherBasics(city) {
   const element = document.createElement("div");
   element.classList.add("card");
   const data = city.weatherBasicsData();
-  for (let i = 0; i < data.length; i += 1) {
-    const p = document.createElement("p");
-    p.textContent = data[i];
-    element.appendChild(p);
-  }
+  element.innerHTML = `
+  <img src="${data.conditionIcon}" alt="${data.conditionText}">
+  <h2 class="city-name">${data.city}</h2>
+  <p class="condition-text">${data.conditionText}</p>
+  <p class="city-time">${data.lastUpdate}</p>
+  <p class="max-min-temp">Max.${data.maxTemperature}° Min.${data.minTemperature}°</p>
+  `;
+
   return element;
 }
 
