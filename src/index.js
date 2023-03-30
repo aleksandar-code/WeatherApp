@@ -1,2 +1,4 @@
 import "./style.css";
-// import "./modules/view-weather-data"
+import cities from "./modules/cities-weather";
+
+cities.createCity();

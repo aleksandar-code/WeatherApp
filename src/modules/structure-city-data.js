@@ -62,7 +62,7 @@ function structureForecast(response) {
   const createDay = (idx) => {
     const maxTemperature = response.forecast.forecastday[idx].maxtemp_c;
     const minTemperature = response.forecast.forecastday[idx].mintemp_c;
-    const conditionIcon = response.forecast.forecastday[idx].condition.icon;
+    const conditionIcon = response.forecast.forecastday[idx].condition;
 
     return { maxTemperature, minTemperature, conditionIcon };
   };

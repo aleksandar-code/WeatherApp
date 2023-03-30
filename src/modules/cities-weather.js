@@ -8,8 +8,9 @@ class CitiesWeather {
     this.cities = [];
   }
 
-  createCity() {
-    const [current, forecast] = createCurrentAndForecast();
+  async createCity() {
+    const array = await createCurrentAndForecast();
+    const [current, forecast] = array;
     const city = new CityWeather(nanoid(), current, forecast);
     this.appendCity(city);
   }
@@ -19,4 +20,6 @@ class CitiesWeather {
   }
 }
 
-export default CitiesWeather;
+const cities = new CitiesWeather();
+
+export default cities;
