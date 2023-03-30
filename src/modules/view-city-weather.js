@@ -50,7 +50,7 @@ function createDetails(city) {
   <div class="weather-detail"><p>Air quality</p><p>${data.aqi}</p></div>
   <div class="weather-detail"><p>UV Index</p><p>${data.uvIdx}</p></div>
   <div class="weather-detail"><p>Sunrise & Sunset</p><p>${data.sunriseTime} ${data.sunsetTime}</p></div>
-  <div class="weather-detail"><p>Feels like</p><p>${data.feelsLike}</p></div>
+  <div class="weather-detail"><p>Feels like</p><p>${data.feelsLike}°</p></div>
   <div class="weather-detail"><p>Precipitations</p><p>${data.precipitations} mm</p></div>
   <div class="weather-detail"><p>Wind</p><p>${data.windSpeed} km/h</p></div>
   <div class="weather-detail"><p>Humidity</p><p>${data.humidityPercentage} %</p></div>

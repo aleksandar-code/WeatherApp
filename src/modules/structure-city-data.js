@@ -23,11 +23,29 @@ function structureCurrent(response) {
   );
   const weatherDetails = (function getWeatherDetails() {
     const toFetch = response.forecast.forecastday[0];
-    const aqi = toFetch.day.air_quality["us-epa-index"];
+    const aqi = (function getAQI() {
+      const number = toFetch.day.air_quality["us-epa-index"];
+      const aqiTable = {
+        1: "Good",
+        2: "Acceptable",
+        3: "Unhealthy for sensitive groups",
+        4: "Unhealthy",
+        5: "Very unhealthy",
+        6: "Hazardous",
+      };
+      let quality;
+      const keys = Object.keys(aqiTable);
+      for (let i = 0; i < keys.length; i += 1) {
+        if (keys[i] === number.toString()) {
+          quality = aqiTable[keys[i]];
+        }
+      }
+      return quality;
+    })();
     const uvIdx = toFetch.day.uv;
     const sunriseTime = toFetch.astro.sunrise;
     const sunsetTime = toFetch.astro.sunset;
-    const feelsLike = response.current.feelslike_c;
+    const feelsLike = Math.round(response.current.feelslike_c);
     const precipitations = response.current.precip_mm;
     const windSpeed = response.current.wind_kph;
     const humidityPercentage = response.current.humidity;
