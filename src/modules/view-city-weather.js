@@ -49,6 +49,26 @@ function createDetails(city) {
   return element;
 }
 
+function createNavigationBar() {
+  const element = document.createElement("nav");
+  element.classList.add("navigation-bar");
+  const ul = document.createElement("ul");
+  ul.classList.add("city-navigation-bar");
+
+  const plusButton = document.createElement("button");
+  plusButton.classList.add("search-cities-tab-button");
+  plusButton.textContent = "+";
+
+  const currentLocationArrow = document.createElement("li");
+  currentLocationArrow.classList.add("current-location-arrow");
+  currentLocationArrow.innerHTML = "&#10146;";
+
+  ul.appendChild(currentLocationArrow);
+  element.append(ul, plusButton);
+
+  return element;
+}
+
 function showPage() {
   const city = cities.cities[0];
   const main = document.getElementById("main");
@@ -56,7 +76,14 @@ function showPage() {
   const detailsBasic = createDetails(city);
   const hourForecast = createHourForecast(city);
   const dayForecast = createDayForecast(city);
-  main.append(weatherBasics, hourForecast, dayForecast, detailsBasic);
+  const navigationBar = createNavigationBar(cities);
+  main.append(
+    weatherBasics,
+    hourForecast,
+    dayForecast,
+    detailsBasic,
+    navigationBar
+  );
 }
 
 export default showPage;

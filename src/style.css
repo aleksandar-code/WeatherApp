@@ -33,3 +33,39 @@
   align-items: center;
   justify-content: center;
 }
+
+.navigation-bar {
+  height: 100px;
+  width: 100%;
+  background-color: yellow;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-cities-tab-button {
+  background-color: greenyellow;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+}
+
+.current-location-arrow {
+  font-size: 3rem;
+  color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateZ(315deg);
+}
+
+.city-navigation-bar {
+  display: flex;
+  align-items: center;
+}
