@@ -7,6 +7,7 @@ function createWeatherBasics(city) {
   element.innerHTML = `
   <img src="${data.conditionIcon}" alt="${data.conditionText}">
   <h2 class="city-name">${data.city}</h2>
+  <p class="city-temperature">${data.temperature}°</p>
   <p class="condition-text">${data.conditionText}</p>
   <p class="city-time">${data.lastUpdate}</p>
   <p class="max-min-temp">Max.${data.maxTemperature}° Min.${data.minTemperature}°</p>
