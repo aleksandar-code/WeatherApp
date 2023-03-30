@@ -12,6 +12,17 @@ function createWeatherBasics(city) {
   return element;
 }
 
+function createHourForecast(city) {
+  const data = city.hourForecastData();
+  const element = document.createElement("div");
+  element.classList.add("card");
+
+  for (let i = 0; i < data.length; i += 1) {
+    element.textContent += `${data[i].temperature} ${data[i].conditionIcon}\n`;
+  }
+  return element;
+}
+
 function createDetails(city) {
   const data = city.detailsData();
   const element = document.createElement("div");
@@ -32,7 +43,8 @@ function showPage() {
   const main = document.getElementById("main");
   const weatherBasics = createWeatherBasics(city);
   const detailsBasic = createDetails(city);
-  main.append(weatherBasics, detailsBasic);
+  const hourForecast = createHourForecast(city);
+  main.append(weatherBasics, hourForecast, detailsBasic);
 }
 
 export default showPage;
