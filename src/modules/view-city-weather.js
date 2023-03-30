@@ -46,13 +46,17 @@ function createDetails(city) {
   const element = document.createElement("div");
   element.classList.add("card");
 
-  for (let i = 0; i < data.length; i += 1) {
-    const circle = document.createElement("div");
-    circle.classList.add("weather-detail");
-    circle.textContent = data[i];
+  element.innerHTML = `
+  <div class="weather-detail"><p>Air quality</p><p>${data.aqi}</p></div>
+  <div class="weather-detail"><p>UV Index</p><p>${data.uvIdx}</p></div>
+  <div class="weather-detail"><p>Sunrise & Sunset</p><p>${data.sunriseTime} ${data.sunsetTime}</p></div>
+  <div class="weather-detail"><p>Feels like</p><p>${data.feelsLike}</p></div>
+  <div class="weather-detail"><p>Precipitations</p><p>${data.precipitations} mm</p></div>
+  <div class="weather-detail"><p>Wind</p><p>${data.windSpeed} km/h</p></div>
+  <div class="weather-detail"><p>Humidity</p><p>${data.humidityPercentage} %</p></div>
+  <div class="weather-detail"><p>Vision</p><p>${data.vision} km</p></div>
+  <div class="weather-detail"><p>Pressure</p><p>${data.hectopascals} hPa</p></div>`;
 
-    element.appendChild(circle);
-  }
   return element;
 }
 
@@ -61,7 +65,7 @@ function createNavigationBar() {
   element.classList.add("navigation-bar");
   const ul = document.createElement("ul");
   ul.classList.add("city-navigation-bar");
-
+  // use listOfCities
   const plusButton = document.createElement("button");
   plusButton.classList.add("search-cities-tab-button");
   plusButton.textContent = "+";
@@ -83,7 +87,7 @@ function showPage() {
   const detailsBasic = createDetails(city);
   const hourForecast = createHourForecast(city);
   const dayForecast = createDayForecast(city);
-  const navigationBar = createNavigationBar(cities);
+  const navigationBar = createNavigationBar();
   main.append(
     weatherBasics,
     hourForecast,
