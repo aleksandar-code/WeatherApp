@@ -1,13 +1,8 @@
 import { searchCity } from "./api.calls";
+import Autocomplete from "./autocomplete";
 
 function structureAutoComplete(data) {
-  const cityNames = [];
-  for (let i = 0; i < data.length; i += 1) {
-    const city = data[i].name;
-    cityNames.push(city);
-  }
-
-  return cityNames;
+  return new Autocomplete(data);
 }
 
 function closeAllLists() {
@@ -42,4 +37,4 @@ async function getAutoComplete(viewAutoComplete) {
   }
 }
 
-export { closeAllLists, getAutoComplete };
+export { closeAllLists, getAutoComplete, getSearchData };

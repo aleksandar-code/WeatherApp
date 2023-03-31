@@ -9,7 +9,6 @@ import ForecastWeather from "./forecast-weather";
 function structureCurrent(response) {
   // or iterate all key values with having my keys in array i look for then return
   // the values in an array and do array destructuring to instantiate the values
-
   const city = response.location.name;
   const temperature = response.current.temp_c;
   const lastUpdate = response.current.last_updated.split(" ")[1];

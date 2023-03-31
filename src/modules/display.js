@@ -1,6 +1,7 @@
 import showPage from "./view-city-weather";
 import createCity from "./create-city";
-import { getAutoComplete, closeAllLists } from "./manage-search";
+import { getAutoComplete, closeAllLists, getSearchData } from "./manage-search";
+import Autocomplete from "./autocomplete";
 import viewAutoComplete from "./view-autocomplete";
 
 let setListenerForItems;
@@ -60,7 +61,11 @@ setListenerForItems = () => {
   const items = document.querySelector(".autocomplete-items");
 
   items.onclick = async (e) => {
-    await display(e.target.textContent);
+    const index = e.target.dataset.dataIndex;
+    const searchData = await getSearchData();
+    const autocomplete = new Autocomplete(searchData);
+    const city = autocomplete.returnCity(index);
+    await display(city.url);
   };
 };
 
