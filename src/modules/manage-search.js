@@ -1,5 +1,4 @@
 import { searchCity } from "./api.calls";
-import viewAutoComplete from "./view-autocomplete";
 
 function structureAutoComplete(data) {
   const cityNames = [];

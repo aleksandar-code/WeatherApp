@@ -1,5 +1,3 @@
-import { setListenerForItems } from "./event-listeners";
-
 function viewAutoComplete(cities) {
   const itemsList = document.querySelector(".autocomplete-items");
   cities.forEach((city) => {
@@ -9,7 +7,6 @@ function viewAutoComplete(cities) {
     itemsList.appendChild(div);
   });
   itemsList.classList.add("active");
-  setListenerForItems();
 }
 
 export default viewAutoComplete;

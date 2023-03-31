@@ -1,5 +1,3 @@
-import { setSearchListeners } from "./event-listeners";
-
 function createNavigationBar() {
   const element = document.createElement("nav");
   element.classList.add("navigation-bar");
@@ -87,7 +85,6 @@ function showPage(city) {
     dayForecast,
     detailsBasic
   );
-  setSearchListeners();
 }
 
 export default showPage;
