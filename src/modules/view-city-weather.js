@@ -89,6 +89,14 @@ function createDetails(city) {
   return element;
 }
 
+function createFooter() {
+  const element = document.createElement("footer");
+  element.innerHTML =
+    "<a href='https://www.weatherapi.com/' title='Free Weather API'><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt='Weather data by WeatherAPI.com' border='0'></a>";
+
+  return element;
+}
+
 function showPage(city) {
   const main = document.getElementById("main");
   const navigationBar = createNavigationBar();
@@ -96,12 +104,14 @@ function showPage(city) {
   const detailsBasic = createDetails(city);
   const hourForecast = createHourForecast(city);
   const dayForecast = createDayForecast(city);
+  const footer = createFooter();
   main.append(
     navigationBar,
     weatherBasics,
     hourForecast,
     dayForecast,
-    detailsBasic
+    detailsBasic,
+    footer
   );
 }
 
