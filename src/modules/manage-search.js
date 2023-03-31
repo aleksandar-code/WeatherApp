@@ -10,11 +10,43 @@ function structureAutoComplete(data) {
   return cityNames;
 }
 
-async function getAutoComplete() {
-  const searchBar = document.getElementById("city-search");
-  const response = await searchCity(searchBar.value);
-  const result = structureAutoComplete(response);
-  console.log(result);
+function closeAllLists() {
+  if (document.querySelector(".autocomplete-items") !== null) {
+    const itemsList = document.querySelector(".autocomplete-items");
+    itemsList.innerHTML = "";
+    if (itemsList.classList.contains("active"))
+      itemsList.classList.remove("active");
+  }
 }
 
-export default getAutoComplete;
+function validateSearch(search) {
+  if (search.length > 2) return true;
+
+  return false;
+}
+
+async function getSearchData() {
+  const search = document.getElementById("city-search").value;
+  let response;
+  if (validateSearch(search) === true) {
+    response = await searchCity(search);
+  }
+  return response;
+}
+
+async function getAutoComplete() {
+  const response = await getSearchData();
+  if (response !== undefined) {
+    const result = structureAutoComplete(response);
+    const itemsList = document.querySelector(".autocomplete-items");
+    result.forEach((city) => {
+      const div = document.createElement("div");
+      div.textContent = city;
+
+      itemsList.appendChild(div);
+    });
+    itemsList.classList.add("active");
+  }
+}
+
+export { closeAllLists, getAutoComplete };

@@ -1,9 +1,10 @@
-import getAutoComplete from "./manage-search";
+import { getAutoComplete, closeAllLists } from "./manage-search";
 
 function setSearchListeners() {
   const searchBar = document.getElementById("city-search");
 
-  searchBar.addEventListener("search", () => {
+  searchBar.addEventListener("input", () => {
+    closeAllLists();
     getAutoComplete();
   });
 
@@ -11,6 +12,11 @@ function setSearchListeners() {
 
   form.onsubmit = (e) => {
     e.preventDefault();
+    closeAllLists();
   };
+
+  document.addEventListener("click", () => {
+    closeAllLists();
+  });
 }
 export default setSearchListeners;
