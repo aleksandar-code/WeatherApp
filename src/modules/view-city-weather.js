@@ -13,6 +13,7 @@ function createNavigationBar() {
 function createWeatherBasics(city) {
   const element = document.createElement("div");
   element.classList.add("card");
+  element.setAttribute("id", "weather-basics");
   const data = city.weatherBasicsData();
   element.innerHTML = `
   <img src="${data.conditionIcon}" alt="${data.conditionText}">
@@ -20,7 +21,7 @@ function createWeatherBasics(city) {
   <p class="city-temperature">${data.temperature}°</p>
   <p class="condition-text">${data.conditionText}</p>
   <p class="city-time">${data.lastUpdate}</p>
-  <p class="max-min-temp">Max.${data.maxTemperature}° Min.${data.minTemperature}°</p>
+  <p class="max-min-temp">Min.${data.minTemperature}° Max.${data.maxTemperature}°</p>
   `;
 
   return element;
@@ -30,6 +31,7 @@ function createHourForecast(city) {
   const data = city.hourForecastData();
   const element = document.createElement("div");
   element.classList.add("card");
+  element.setAttribute("id", "hour-forecast");
   for (let i = 0; i < data.length; i += 1) {
     element.innerHTML += `<div><p>${data[i].hour}: ${data[i].temperature}°</p><img src="${data[i].conditionIcon}" alt="${data[i].conditionText}"></div>`;
   }
@@ -40,7 +42,7 @@ function createDayForecast(city) {
   const data = city.dayForecastData();
   const element = document.createElement("div");
   element.classList.add("card");
-
+  element.setAttribute("id", "day-forecast");
   for (let i = 0; i < data.length; i += 1) {
     let option = "";
     if (i === 0) {
@@ -56,11 +58,12 @@ function createDetails(city) {
   const data = city.detailsData();
   const element = document.createElement("div");
   element.classList.add("card");
-
+  element.setAttribute("id", "weather-details");
   element.innerHTML = `
   <div class="weather-detail"><p>Air quality</p><p>${data.aqi}</p></div>
   <div class="weather-detail"><p>UV Index</p><p>${data.uvIdx}</p></div>
-  <div class="weather-detail"><p>Sunrise & Sunset</p><p>${data.sunriseTime} ${data.sunsetTime}</p></div>
+  <div class="weather-detail"><p>Sunrise</p><p>${data.sunriseTime}</p></div>
+ <div class="weather-detail"><p>Sunset</p><p> ${data.sunsetTime}</p></div>
   <div class="weather-detail"><p>Feels like</p><p>${data.feelsLike}°</p></div>
   <div class="weather-detail"><p>Precipitations</p><p>${data.precipitations} mm</p></div>
   <div class="weather-detail"><p>Wind</p><p>${data.windSpeed} km/h</p></div>
