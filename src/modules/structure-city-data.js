@@ -3,7 +3,7 @@ import CurrentWeather from "./current-weather";
 import ForecastWeather from "./forecast-weather";
 
 function convertAmericanToEu(data) {
-  const result = new Date(`1970-01-01 ${data}`).toLocaleTimeString("en-US", {
+  const result = new Date(`1970-01-01 ${data}`).toLocaleTimeString([], {
     hour12: false,
     hour: "numeric",
     minute: "numeric",
