@@ -60,34 +60,18 @@
   padding: 10px;
 }
 
-.search-cities-tab-button {
-  background-color: var(--accent-color);
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  height: fit-content;
-  width: fit-content;
-  padding: 10px 20px;
-}
-
-.current-location-arrow {
-  font-size: 3rem;
-  color: var(--secondary-accent-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: rotateZ(315deg);
-}
-
-.city-navigation-bar {
-  display: flex;
-  align-items: center;
-}
-
 .card div {
   display: flex;
   align-items: center;
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input[type="search"] {
+  outline: none;
+  border-radius: 8px;
+  padding: 10px 20px;
 }

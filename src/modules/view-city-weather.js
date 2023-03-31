@@ -1,4 +1,17 @@
 import cities from "./cities-weather";
+import setSearchListeners from "./event-listeners";
+
+function createNavigationBar() {
+  const element = document.createElement("nav");
+  element.classList.add("navigation-bar");
+  const form = document.createElement("form");
+  form.autocomplete = "off";
+  form.noValidate = true;
+  form.innerHTML =
+    "<div class='autocomplete'><input type='search' id='city-search' name='city-search' placeholder='Paris'></div>";
+  element.appendChild(form);
+  return element;
+}
 
 function createWeatherBasics(city) {
   const element = document.createElement("div");
@@ -61,41 +74,22 @@ function createDetails(city) {
   return element;
 }
 
-function createNavigationBar() {
-  const element = document.createElement("nav");
-  element.classList.add("navigation-bar");
-  const ul = document.createElement("ul");
-  ul.classList.add("city-navigation-bar");
-  // use listOfCities
-  const plusButton = document.createElement("button");
-  plusButton.classList.add("search-cities-tab-button");
-  plusButton.textContent = "+";
-
-  const currentLocationArrow = document.createElement("li");
-  currentLocationArrow.classList.add("current-location-arrow");
-  currentLocationArrow.innerHTML = "&#10146;";
-
-  ul.appendChild(currentLocationArrow);
-  element.append(ul, plusButton);
-
-  return element;
-}
-
 function showPage() {
   const city = cities.cities[0];
   const main = document.getElementById("main");
+  const navigationBar = createNavigationBar();
   const weatherBasics = createWeatherBasics(city);
   const detailsBasic = createDetails(city);
   const hourForecast = createHourForecast(city);
   const dayForecast = createDayForecast(city);
-  const navigationBar = createNavigationBar();
   main.append(
+    navigationBar,
     weatherBasics,
     hourForecast,
     dayForecast,
-    detailsBasic,
-    navigationBar
+    detailsBasic
   );
+  setSearchListeners();
 }
 
 export default showPage;
