@@ -2,7 +2,15 @@ import { getCityWeather } from "./api.calls";
 import CurrentWeather from "./current-weather";
 import ForecastWeather from "./forecast-weather";
 
-// create the data
+function convertAmericanToEu(data) {
+  const result = new Date(`1970-01-01 ${data}`).toLocaleTimeString("en-US", {
+    hour12: false,
+    hour: "numeric",
+    minute: "numeric",
+  });
+
+  return result;
+}
 
 // Current city, current temperature in °C first and °F, last updated time, condition, max & min for current day,
 // weather details: UV Index, wind speed + other details.
@@ -43,8 +51,8 @@ function structureCurrent(response) {
       return quality;
     })();
     const uvIdx = toFetch.day.uv;
-    const sunriseTime = toFetch.astro.sunrise;
-    const sunsetTime = toFetch.astro.sunset;
+    const sunriseTime = convertAmericanToEu(toFetch.astro.sunrise);
+    const sunsetTime = convertAmericanToEu(toFetch.astro.sunset);
     const feelsLike = Math.round(response.current.feelslike_c);
     const precipitations = response.current.precip_mm;
     const windSpeed = response.current.wind_kph;

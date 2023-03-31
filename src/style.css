@@ -36,6 +36,10 @@ body {
   padding: 20px;
 }
 
+.card .weather-detail-double {
+  display: flex;
+}
+
 .weather-detail {
   height: 120px;
   width: 120px;

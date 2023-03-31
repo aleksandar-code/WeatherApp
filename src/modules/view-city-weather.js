@@ -60,16 +60,31 @@ function createDetails(city) {
   element.classList.add("card");
   element.setAttribute("id", "weather-details");
   element.innerHTML = `
-  <div class="weather-detail"><p>Air quality</p><p>${data.aqi}</p></div>
-  <div class="weather-detail"><p>UV Index</p><p>${data.uvIdx}</p></div>
-  <div class="weather-detail"><p>Sunrise</p><p>${data.sunriseTime}</p></div>
- <div class="weather-detail"><p>Sunset</p><p> ${data.sunsetTime}</p></div>
-  <div class="weather-detail"><p>Feels like</p><p>${data.feelsLike}°</p></div>
-  <div class="weather-detail"><p>Precipitations</p><p>${data.precipitations} mm</p></div>
-  <div class="weather-detail"><p>Wind</p><p>${data.windSpeed} km/h</p></div>
-  <div class="weather-detail"><p>Humidity</p><p>${data.humidityPercentage} %</p></div>
-  <div class="weather-detail"><p>Vision</p><p>${data.vision} km</p></div>
-  <div class="weather-detail"><p>Pressure</p><p>${data.hectopascals} hPa</p></div>`;
+  
+  <div class="weather-detail-double">
+    <div class="weather-detail"><p>Air quality</p><p>${data.aqi}</p></div>
+    <div class="weather-detail"><p>UV Index</p><p>${data.uvIdx}</p></div>
+  </div>
+
+  <div class="weather-detail-double">
+    <div class="weather-detail"><p>Sunrise</p><p>${data.sunriseTime}</p></div>
+    <div class="weather-detail"><p>Sunset</p><p> ${data.sunsetTime}</p></div>
+  </div>
+
+  <div class="weather-detail-double">
+    <div class="weather-detail"><p>Feels like</p><p>${data.feelsLike}°</p></div>
+    <div class="weather-detail"><p>Precipitations</p><p>${data.precipitations} mm</p></div>
+  </div>
+
+  <div class="weather-detail-double">
+    <div class="weather-detail"><p>Wind</p><p>${data.windSpeed} km/h</p></div>
+    <div class="weather-detail"><p>Humidity</p><p>${data.humidityPercentage} %</p></div>
+  </div>
+
+  <div class="weather-detail-double">
+    <div class="weather-detail"><p>Vision</p><p>${data.vision} km</p></div>
+    <div class="weather-detail"><p>Pressure</p><p>${data.hectopascals} hPa</p></div>
+  </div>`;
 
   return element;
 }
