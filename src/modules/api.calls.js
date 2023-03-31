@@ -2,7 +2,7 @@ async function searchCity(search) {
   let result;
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/search.json?key=feed359d6d0647688d9132213232803&q=${search}`,
+      `https://api.weatherapi.com/v1/search.json?key=feed359d6d0647688d9132213232803&q=${search}`,
       { mode: "cors" }
     );
     const searchData = await response.json();
