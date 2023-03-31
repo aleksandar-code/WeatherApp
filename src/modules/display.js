@@ -61,11 +61,16 @@ setListenerForItems = () => {
   const items = document.querySelector(".autocomplete-items");
 
   items.onclick = async (e) => {
-    const index = e.target.dataset.dataIndex;
-    const searchData = await getSearchData();
-    const autocomplete = new Autocomplete(searchData);
-    const city = autocomplete.returnCity(index);
-    await display(city.url);
+    try {
+      const searchData = await getSearchData();
+      const autocomplete = new Autocomplete(searchData);
+      viewAutoComplete(autocomplete);
+      const index = e.target.dataset.dataIndex;
+      const city = autocomplete.returnCity(index);
+      await display(city.url);
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 

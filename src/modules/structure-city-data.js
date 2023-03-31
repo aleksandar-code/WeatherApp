@@ -10,6 +10,7 @@ function structureCurrent(response) {
   // or iterate all key values with having my keys in array i look for then return
   // the values in an array and do array destructuring to instantiate the values
   const city = response.location.name;
+  const isDay = !!response.current.is_day;
   const temperature = response.current.temp_c;
   const lastUpdate = response.current.last_updated.split(" ")[1];
   const conditionText = response.current.condition.text;
@@ -73,7 +74,8 @@ function structureCurrent(response) {
     conditionIcon,
     maxTemperature,
     minTemperature,
-    weatherDetails
+    weatherDetails,
+    isDay
   );
 }
 
