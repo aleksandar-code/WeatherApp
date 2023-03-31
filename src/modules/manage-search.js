@@ -34,7 +34,7 @@ async function getSearchData() {
   return response;
 }
 
-async function getAutoComplete() {
+async function getAutoComplete(viewAutoComplete) {
   const response = await getSearchData();
   if (response) {
     const result = structureAutoComplete(response);
