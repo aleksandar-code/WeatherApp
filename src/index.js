@@ -1,8 +1,9 @@
 import "./style.css";
-import cities from "./modules/cities-weather";
 import showPage from "./modules/view-city-weather";
+import createCity from "./modules/create-city";
 
 window.onload = async () => {
-  await cities.createCity();
-  showPage();
+  const response = await createCity("Paris");
+  const city = response.newCity;
+  showPage(city);
 };

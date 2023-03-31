@@ -1,4 +1,5 @@
 import { searchCity } from "./api.calls";
+import viewAutoComplete from "./view-autocomplete";
 
 function structureAutoComplete(data) {
   const cityNames = [];
@@ -36,16 +37,9 @@ async function getSearchData() {
 
 async function getAutoComplete() {
   const response = await getSearchData();
-  if (response !== undefined) {
+  if (response) {
     const result = structureAutoComplete(response);
-    const itemsList = document.querySelector(".autocomplete-items");
-    result.forEach((city) => {
-      const div = document.createElement("div");
-      div.textContent = city;
-
-      itemsList.appendChild(div);
-    });
-    itemsList.classList.add("active");
+    viewAutoComplete(result);
   }
 }
 

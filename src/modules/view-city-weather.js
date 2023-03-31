@@ -1,5 +1,4 @@
-import cities from "./cities-weather";
-import setSearchListeners from "./event-listeners";
+import { setSearchListeners } from "./event-listeners";
 
 function createNavigationBar() {
   const element = document.createElement("nav");
@@ -74,8 +73,7 @@ function createDetails(city) {
   return element;
 }
 
-function showPage() {
-  const city = cities.cities[0];
+function showPage(city) {
   const main = document.getElementById("main");
   const navigationBar = createNavigationBar();
   const weatherBasics = createWeatherBasics(city);

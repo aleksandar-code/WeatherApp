@@ -1,4 +1,4 @@
-import { getWeatherWithIp } from "./api.calls";
+import { getCityWeather } from "./api.calls";
 import CurrentWeather from "./current-weather";
 import ForecastWeather from "./forecast-weather";
 
@@ -118,8 +118,9 @@ function structureForecast(response) {
 
   return new ForecastWeather(days, hours);
 }
-async function createCurrentAndForecast() {
-  const response = await getWeatherWithIp();
+async function createCurrentAndForecast(city) {
+  const response = await getCityWeather(city);
+  console.log(response);
   const current = structureCurrent(response);
   const forecast = structureForecast(response);
   return [current, forecast];
