@@ -36,8 +36,13 @@ body {
   padding: 20px;
 }
 
+#weather-details {
+  gap: 10px;
+}
+
 .card .weather-detail-double {
   display: flex;
+  gap: 10px;
 }
 
 .weather-detail {

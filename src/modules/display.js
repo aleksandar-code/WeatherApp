@@ -6,6 +6,10 @@ import viewAutoComplete from "./view-autocomplete";
 
 let setListenerForItems;
 
+// function convertToAmerican() {
+
+// }
+
 function setSearchListeners() {
   const searchBar = document.getElementById("city-search");
 
