@@ -120,7 +120,6 @@ function structureForecast(response) {
 }
 async function createCurrentAndForecast(city) {
   const response = await getCityWeather(city);
-  console.log(response);
   const current = structureCurrent(response);
   const forecast = structureForecast(response);
   return [current, forecast];

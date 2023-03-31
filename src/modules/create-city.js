@@ -4,7 +4,6 @@ import createCurrentAndForecast from "./structure-city-data";
 import CityWeather from "./city-weather";
 
 async function createCity(city) {
-  console.log(city);
   const array = await createCurrentAndForecast(city);
   const [current, forecast] = array;
   const newCity = new CityWeather(nanoid(), current, forecast);

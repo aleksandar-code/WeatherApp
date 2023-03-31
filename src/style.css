@@ -70,7 +70,7 @@
   display: inline-block;
 }
 
-input[type="search"] {
+input[type="text"] {
   outline: none;
   border-radius: 8px;
   padding: 10px 20px;

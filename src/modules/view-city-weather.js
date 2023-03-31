@@ -5,7 +5,7 @@ function createNavigationBar() {
   form.autocomplete = "off";
   form.noValidate = true;
   form.innerHTML =
-    "<div class='autocomplete'><input type='search' id='city-search' name='city-search' placeholder='Paris'></div><div class='autocomplete-items'></div>";
+    "<div class='autocomplete'><input type='text' id='city-search' name='city-search' placeholder='Paris'></div><div class='autocomplete-items'></div>";
   element.appendChild(form);
   return element;
 }
