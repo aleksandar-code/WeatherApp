@@ -1,5 +1,3 @@
-# I want to make this weather app as complete and as accessible as possible.
-
 ## Documentation standards
 
 Each program or function should have the following information:
@@ -65,9 +63,3 @@ Each program or function should have the following information:
 
 ### Color palette:
 - #A799B7, #9888A5, #776472, #445552, #294D4A
-
-
-
-// Add documentation about how each object is gonna be and how to organize the data.
-
-// https://w3c.github.io/geolocation-api/#getcurrentposition-method read the documentation before doing anything with IP adressses.
